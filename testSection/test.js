@@ -36,7 +36,7 @@ function showQuestion(index) {
     () => Math.random() - 0.5
   );
 
-  quiztex.innerText = `Savollarning qiyinlik darajasi: ${question.difficulty}`;
+  quiztex.innerText = `Savollarning qiyinlig darajasi: ${question.difficulty}`;
   cardbody.innerHTML = `
     <div class="quiz-item mb-5">
       <p class="question mb-4">${index + 1}. ${question.question}</p>
@@ -72,9 +72,17 @@ function nextQuestion(selectedAnswer, correctAnswer) {
   if (currentQuestionIndex < quiz.length) {
     showQuestion(currentQuestionIndex);
   } else {
-    saveResult(); 
-    cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball</p>`;
+    if (countResult >= 7) {
+      cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball. Siz yuqori natijani ko'rsatdingiz</p>`;
+    } else if (countResult <= 7 && countResult >= 5) {
+      cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball. Siz o'rtacha natija ko'rsatdingiz</p>`;
+    } else {
+      cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball. Siz past natija ko'rsatdingiz</p>`;
+    }
+
+    // cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball</p>`;
   }
+  // sessionStorage.setItem("countBall", JSON.stringify(countResult));
 }
 
 function saveResult() {
@@ -86,7 +94,6 @@ function saveResult() {
   allResults.push(newResult);
   sessionStorage.setItem("quizResults", JSON.stringify(allResults));
 }
-
 
 axios
   .get(
