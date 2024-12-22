@@ -72,19 +72,17 @@ function nextQuestion(selectedAnswer, correctAnswer) {
   if (currentQuestionIndex < quiz.length) {
     showQuestion(currentQuestionIndex);
   } else {
-    if(countResult >= 7) {
+    if (countResult >= 7) {
       cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball. Siz yuqori natijani ko'rsatdingiz</p>`;
-    }
-    else if(countResult <= 7 && countResult >= 5) {
+    } else if (countResult <= 7 && countResult >= 5) {
       cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball. Siz o'rtacha natija ko'rsatdingiz</p>`;
-    }
-    else {
+    } else {
       cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball. Siz past natija ko'rsatdingiz</p>`;
     }
-  
+
     // cardbody.innerHTML = `<p class='text-success'>Test yakunlandi! Sizning natijangiz: ${countResult} ball</p>`;
   }
-  sessionStorage.setItem('countBall', JSON.stringify(countResult))
+  sessionStorage.setItem("countBall", JSON.stringify(countResult));
 }
 
 axios
