@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./testSection/test.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./testSection/test.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>test-platform</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Test Platform</a>
+        <button
+          onclick="window.location.href=`./profilePage/profile.html`"
+          class="btn btn-success"
+        >
+          profile
+        </button>
+      </div>
+    </nav>
+    <div id="root"></div>
+    <main
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 150px;
+      "
+    >
+      <button
+        onclick="window.location.href = `./testSection/test.html`"
+        class="btn btn-primary"
+      >
+        Testni boshlash
+      </button>
+    </main>
+  </body>
+</html>
